@@ -16,7 +16,7 @@ public class Main {
             int count = 0;
             int countfin = 0;
             int correct = 0;
-            while (correct == 0) {
+            do {
                 try {
                     System.out.println("Introduzca la cantidad de números a sumar:");
                     countfin = Integer.parseInt(br.readLine());
@@ -24,7 +24,7 @@ public class Main {
                 } catch (NumberFormatException e) {
                     System.out.println("Operación invalida");
                 }
-            }
+            } while (correct == 0);
                 while (count < countfin) {
                     System.out.println("Introduzca un valor:");
                     try {

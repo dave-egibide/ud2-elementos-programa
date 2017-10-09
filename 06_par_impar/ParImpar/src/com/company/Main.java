@@ -14,7 +14,7 @@ public class Main {
         {
             System.out.println("Introduzca un valor:");
             int end = 0;
-            while (end == 0) {
+            do {
                 try {
                     Double x = Double.parseDouble((br.readLine()));
                     if (x % 2 == 0) {
@@ -32,7 +32,7 @@ public class Main {
                 } catch (NumberFormatException e) {
                     System.out.println("Operación invalida. Introduzca un valor numérico.");
                 }
-            }
+            } while (end == 0);
         }
     }
 }

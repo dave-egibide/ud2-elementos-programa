@@ -12,7 +12,7 @@ public class Main {
             int correct = 0;
             double precio = 0;
             double dinero = 0;
-            while (correct == 0) {
+            do {
                 try {
                 System.out.println("Escriba el precio del producto en céntimos");
                 precio = Double.parseDouble(br.readLine());
@@ -30,7 +30,7 @@ public class Main {
             } catch (NumberFormatException e){
                     System.out.println("Operación invalida");
                 }
-        }
+        } while (correct == 0);
         double cambiod = precio - dinero;
             if (cambiod == 0) {
                 System.out.println("Operación  sin cambio");

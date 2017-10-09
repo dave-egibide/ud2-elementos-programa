@@ -12,7 +12,7 @@ public class Main {
         DecimalFormat df = new DecimalFormat("#");
         df.setMaximumFractionDigits(0);
         int end = 0;
-        while (end == 0) {
+        do {
             try {
                     System.out.println("Introduzca un valor:");
                     double a = Double.parseDouble(br.readLine());
@@ -29,6 +29,6 @@ public class Main {
             } catch (NumberFormatException e) {
                 System.out.println("Operación invalida, introduzca un valor numérico");
             }
-        }
+        } while (end == 0);
     }
 }

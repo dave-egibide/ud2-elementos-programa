@@ -15,7 +15,7 @@ public class Main {
             int end = 0;
             int correct = 0;
             double temp = 0;
-            while (correct == 0) {
+            do {
                 System.out.println("Introduzca una temperatura en grados centígrados:");
                 try {
                     temp = Double.parseDouble(br.readLine());
@@ -23,8 +23,8 @@ public class Main {
                 } catch (NumberFormatException e) {
                     System.out.println("Operación invalida");
                 }
-            }
-                while (end == 0) {
+            } while (correct == 0);
+                do {
                     System.out.println("Introduzca F para convertir a Fahrenheit o introduzca K para convertir a Kelvin:");
                     try {
                         String x = br.readLine();
@@ -62,7 +62,7 @@ public class Main {
                     } catch (NumberFormatException e) {
                         System.out.println("Operación invalida");
                     }
-                }
+                } while (end == 0);
 
             }
         }

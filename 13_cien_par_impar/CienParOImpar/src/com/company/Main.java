@@ -9,8 +9,8 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         {
-            int correct = 0;
-            while (correct == 0) {
+            int end = 0;
+            do {
                 System.out.println("Escriba par o impar");
                 String x = br.readLine();
                 if ((new String("par").equals(x)) == true) {
@@ -24,7 +24,7 @@ public class Main {
                         --countdown;
                     }
                     System.out.println("198.");
-                    ++correct;
+                    ++end;
                     } else {
                     if ((new String("impar").equals(x)) == true) {
                         System.out.println("Los 100 primeros números impares son:");
@@ -37,13 +37,13 @@ public class Main {
                             --countdown;
                         }
                         System.out.println("199.");
-                        ++correct;
+                        ++end;
                     } else {
                         System.out.println("Operación no valida");
                     }
                 }
 
-            }
+            } while (end == 0);
         }
     }
 }

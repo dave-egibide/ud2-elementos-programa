@@ -15,7 +15,7 @@ public class Main {
             double total = 0;
             int count = 0;
             int end = 0;
-            while (end == 0) {
+            do {
                 try {
             while (count < 10) {
                 System.out.println("Introduzca un valor:");
@@ -32,7 +32,7 @@ public class Main {
                 } catch (NumberFormatException e) {
                     System.out.println("Operación invalida");
                 }
-            }
+            } while (end == 0);
         }
     }
 }

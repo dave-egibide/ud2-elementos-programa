@@ -9,41 +9,44 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         {
-            int end = 0;
-            while (end == 0) {
+            int x;
+            do {
                 try {
                     System.out.println("Introduzca un valor entre 1 y 7:");
-                    int x = Integer.parseInt(br.readLine());
-                    if (x < 1 || x > 7) {
-                        System.out.println("Operación invalida, introduzca un valor entre 1 y 7");
-                    } else {
-                        if (x == 1) {
-                            System.out.println("Lunes");
-                        }
-                        if (x == 2) {
-                            System.out.println("Martes");
-                        }
-                        if (x == 3) {
-                            System.out.println("Miércoles");
-                        }
-                        if (x == 4) {
-                            System.out.println("Jueves");
-                        }
-                        if (x == 5) {
-                            System.out.println("Viernes");
-                        }
-                        if (x == 6) {
-                            System.out.println("Sábado");
-                        }
-                        if (x == 7) {
-                            System.out.println("Domingo");
-                        }
-                        ++end;
-                    }
-                } catch (NumberFormatException e) {
-                    System.out.println("Operación invalida");
-                }
+                    x = Integer.parseInt(br.readLine());
+            switch (x) {
+                case 1:
+                    System.out.println("Lunes");
+                    break;
+                case 2:
+                    System.out.println("Martes");
+                    break;
+                case 3:
+                    System.out.println("Miércoles");
+                    break;
+                case 4:
+                    System.out.println("Jueves");
+                    break;
+                case 5:
+                    System.out.println("Viernes");
+                    break;
+                case 6:
+                    System.out.println("Sábado");
+                    break;
+                case 7:
+                    System.out.println("Domingo");
+                    break;
+                default:
+                    System.out.println("Operación invalida.");
+                    x = -1;
+                    break;
             }
+                } catch (NumberFormatException e) {
+                    System.out.println("Operación invalida.");
+                    x = -1;
+                }
+            } while (x == -1);
+
         }
     }
 }

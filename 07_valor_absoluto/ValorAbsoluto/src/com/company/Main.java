@@ -14,10 +14,9 @@ public class Main {
         {
             double absoluto;
             int end = 0;
-            while (end == 0) {
+            do {
                 try {
-            System.out.println("Introduzca un valor.");
-            System.out.println("Introduzca 0 para finalizar.");
+            System.out.println("Introduzca un valor o introduzca 0 para finalizar.");
             double x = Double.parseDouble(br.readLine());
             if (x != 0) {
                 if (x < 0) {
@@ -36,7 +35,7 @@ public class Main {
                 } catch (NumberFormatException e) {
                     System.out.println("Operación invalida");
                 }
-            }
+            } while (end == 0);
         }
 
     }

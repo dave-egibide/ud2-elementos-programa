@@ -12,7 +12,7 @@ public class Main {
         {
             int end = 0;
             double cuadrado = 0;
-            while (end == 0) {
+            do {
                 try {
                     System.out.println("Introduzca un valor:");
                     double x = Double.parseDouble(br.readLine());
@@ -62,7 +62,7 @@ public class Main {
                 } catch (NumberFormatException e) {
                     System.out.println("Operación invalida.");
                 }
-            }
+            } while (end == 0);
         }
     }
 }

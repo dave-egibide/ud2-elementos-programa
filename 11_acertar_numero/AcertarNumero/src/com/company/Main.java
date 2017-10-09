@@ -12,7 +12,7 @@ public class Main {
         {
             int random = ThreadLocalRandom.current().nextInt(0, 100 + 1);
             int end = 0;
-            while (end == 0) {
+            do {
                 try {
                     System.out.println("Introduzca un número entre 0 y 100, o escriba FIN para terminar");
                     String x = br.readLine();
@@ -35,7 +35,7 @@ public class Main {
                 } catch (NumberFormatException e) {
                     System.out.println("Operación invalida");
                 }
-            }
+            } while (end == 0);
         }
     }
 }
