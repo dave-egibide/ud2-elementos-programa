@@ -8,32 +8,34 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        double dni = 0;
+
+        int dni = 0;
         boolean verificado = false;
         boolean correcto;
-        while (dni == 0){
-            try {
-                System.out.println("Introduzca un número de DNI:");
-                dni = Double.parseDouble(br.readLine());
-                if (dni < 1 || dni > 99999999 || dni % 1 != 0) {
-                    System.out.println("Número inválido");
-                    dni = 0;
-                }
-            } catch (NumberFormatException e) {
-                System.out.println("Operación inválida.");
+
+        while (dni == 0) {
+            System.out.println("Introduzca un número de DNI:");
+            dni = Integer.parseInt(br.readLine());
+
+            if (dni < 1 || dni > 99999999) {
+                System.out.println("Número inválido");
+                dni = 0;
             }
         }
+
         do {
-        System.out.println("Introduzca la letra a verificar:");
-        String letra = br.readLine();
-        letra = letra.toLowerCase();
+            System.out.println("Introduzca la letra a verificar:");
+            String letra = br.readLine();
+
+            letra = letra.toLowerCase();
             correcto = true;
+
             switch (letra) {
                 case "t":
                     if (dni % 23 == 0) {
                         verificado = true;
                     }
-
+                    break;
                 case "r":
                     if (dni % 23 == 1) {
                         verificado = true;
@@ -150,6 +152,7 @@ public class Main {
                     break;
             }
         } while (!correcto);
+
         if (verificado) {
             System.out.println("DNI correcto.");
         } else {

@@ -9,33 +9,37 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         {
-            int correct = 0;
-            double precio = 0;
-            double dinero = 0;
+            int precio = 0;
+            int dinero = 0;
+            boolean start = true;
+
             do {
-                try {
                 System.out.println("Escriba el precio del producto en céntimos");
-                precio = Double.parseDouble(br.readLine());
+                precio = Integer.parseInt(br.readLine());
                 System.out.println("Escriba el dinero introducido en céntimos");
-                dinero = Double.parseDouble(br.readLine());
+                dinero = Integer.parseInt(br.readLine());
+
                 if (dinero >= precio) {
                     System.out.println("Dinero insuficiente");
+
                 } else {
-                    if (precio % 5 == 0 && dinero % 5 == 0) {
-                        ++correct;
-                    } else {
+                    if (precio % 5 != 0 && dinero % 5 != 0) {
                         System.out.println("Operación invalida");
+
+                    } else {
+                        start = true;
                     }
                 }
-            } catch (NumberFormatException e){
-                    System.out.println("Operación invalida");
-                }
-        } while (correct == 0);
-        double cambiod = precio - dinero;
+            } while (!start);
+
+            int cambiod = precio - dinero;
+
             if (cambiod == 0) {
                 System.out.println("Operación  sin cambio");
+
             } else {
-                int cambio = (int) cambiod;
+                int cambio = cambiod;
+
                 if (cambio >= 200) {
                     int dos = cambio / 200;
                     cambio = cambio % 200;
@@ -72,6 +76,6 @@ public class Main {
                     System.out.println(" moneda(s) de 5 céntimos");
                 }
             }
+        }
     }
-}
 }
