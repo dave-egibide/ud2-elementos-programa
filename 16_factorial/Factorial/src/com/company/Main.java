@@ -16,7 +16,7 @@ public class Main {
         System.out.println("Introduzca un valor:");
         do {
             try {
-                x = Double.parseDouble(br.readLine());
+                x = Double.parseDouble((br.readLine());
                 if (x <= 0 || x % 1 != 0) {
                     System.out.println("Error. Introduzca un valor entero positivo:");
                 } else fact = x;
