@@ -9,35 +9,25 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        boolean end = false;
-        int x;
+        boolean primo = true;
+        int x, count = 2;
 
-        while (!end) {
-            System.out.println("Introduzca un valor:");
-            x = Integer.parseInt(br.readLine());
+        System.out.println("Introduzca un valor:");
+        x = Integer.parseInt(br.readLine());
 
-            if (x > 2) {
+        if (x < 2) {
+            System.out.println(x + " no es un número primo.");
+            primo = false;
 
-                for (int count = 2; count < x && !end; ) {
-                    if (x % count == 0) {
-                        System.out.print(x);
-                        System.out.println(" no es un número primo.");
-                        end = true;
-                    }
-                    ++count;
-                }
+        } else while (count < x && primo) {
+            if (x % count == 0) {
+                System.out.println(x + " no es un número primo.");
+                primo = false;
+            } else ++count;
+        }
 
-            } else {
-                System.out.print(x);
-                System.out.println(" no es un número primo.");
-                end = true;
-            }
-
-            if (!end) {
-                System.out.print(x);
-                System.out.println(" es un número primo");
-                end = true;
-            }
+        if (primo) {
+            System.out.println(x + " es un número primo");
         }
     }
 }

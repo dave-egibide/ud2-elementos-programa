@@ -16,7 +16,7 @@ public class Main {
             System.out.println("Introduzca un número entre 0 y 100, o escriba FIN para terminar");
             String x = br.readLine();
 
-            if ((new String("FIN").equals(x))) {
+            if (x.equals("FIN")) {
                 System.out.println("Finalizando");
                 end = true;
 

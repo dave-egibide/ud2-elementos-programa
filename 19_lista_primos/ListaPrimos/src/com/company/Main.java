@@ -15,27 +15,20 @@ public class Main {
         System.out.println("Introduzca un valor:");
         int x = Integer.parseInt(br.readLine());
 
-        System.out.print("Números primos hasta ");
-        System.out.print(x);
-        System.out.println(":");
+        System.out.println("Números primos hasta " + x + ":");
 
-        for (int lista = 2; x >= lista; ) {
-
-            if (lista == count) {
-                if (!noesprimo) {
-                    System.out.println(lista);
-                }
-                lista++;
-                count = 2;
-                noesprimo = false;
-
-            } else {
-                if (lista % count == 0 && lista != count) {
+        for (int lista = 2; x >= lista; ++lista) {
+            while (lista != count) {
+                if (lista % count == 0) {
                     noesprimo = true;
                 }
                 ++count;
             }
-
+            if (!noesprimo) {
+                System.out.println(lista);
+            }
+            count = 2;
+            noesprimo = false;
         }
     }
 }

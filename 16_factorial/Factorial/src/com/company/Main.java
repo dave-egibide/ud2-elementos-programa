@@ -10,24 +10,21 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         int x;
-        int fact = 0;
 
         System.out.println("Introduzca un valor:");
         do {
             x = Integer.parseInt(br.readLine());
             if (x <= 0) {
                 System.out.println("Error. Introduzca un valor positivo:");
-            } else fact = x;
-        } while (fact <= 0);
+            }
+        } while (x <= 0);
 
-        for (int count = x; count > 2; ) {
-            --count;
-            x = x * count;
+        System.out.print("El factorial de " + x);
+
+        for (int count = x - 1; count > 1; --count) {
+            x *= count;
         }
 
-        System.out.print("El factorial de ");
-        System.out.print(fact);
-        System.out.print(" es ");
-        System.out.println(x);
+        System.out.println(" es " + x);
     }
 }

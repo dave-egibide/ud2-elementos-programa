@@ -9,9 +9,8 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         {
-            int precio = 0;
-            int dinero = 0;
-            boolean start = true;
+            int precio, dinero;
+            boolean start = false;
 
             do {
                 System.out.println("Escriba el precio del producto en céntimos");
@@ -19,7 +18,7 @@ public class Main {
                 System.out.println("Escriba el dinero introducido en céntimos");
                 dinero = Integer.parseInt(br.readLine());
 
-                if (dinero >= precio) {
+                if (precio > dinero) {
                     System.out.println("Dinero insuficiente");
 
                 } else {
@@ -32,48 +31,41 @@ public class Main {
                 }
             } while (!start);
 
-            int cambiod = precio - dinero;
+            int cambio = dinero - precio;
 
-            if (cambiod == 0) {
-                System.out.println("Operación  sin cambio");
+            if (cambio == 0) {
+                System.out.println("Operación sin cambio");
 
             } else {
-                int cambio = cambiod;
 
                 if (cambio >= 200) {
                     int dos = cambio / 200;
-                    cambio = cambio % 200;
-                    System.out.print(dos);
-                    System.out.println(" moneda(s) de 2€");
+                    cambio %= 200;
+                    System.out.println(dos + " moneda(s) de 2€");
                 }
                 if (cambio >= 100) {
                     int uno = cambio / 100;
-                    cambio = cambio % 100;
-                    System.out.print(uno);
-                    System.out.println(" moneda(s) de 1€");
+                    cambio %= 100;
+                    System.out.println(uno + " moneda(s) de 1€");
                 }
                 if (cambio >= 50) {
                     int cincu = cambio / 50;
-                    cambio = cambio % 50;
-                    System.out.print(cincu);
-                    System.out.println(" moneda(s) de 50 céntimos");
+                    cambio %= 50;
+                    System.out.println(cincu + " moneda(s) de 50 céntimos");
                 }
                 if (cambio >= 20) {
                     int veinte = cambio / 20;
-                    cambio = cambio % 20;
-                    System.out.print(veinte);
-                    System.out.println(" moneda(s) de 20 céntimos");
+                    cambio %= 20;
+                    System.out.println(veinte + " moneda(s) de 20 céntimos");
                 }
                 if (cambio >= 10) {
                     int diez = cambio / 10;
-                    cambio = cambio % 10;
-                    System.out.print(diez);
-                    System.out.println(" moneda(s) de 10 céntimos");
+                    cambio %= 10;
+                    System.out.println(diez + " moneda(s) de 10 céntimos");
                 }
                 if (cambio >= 5) {
                     int cinco = cambio / 5;
-                    System.out.print(cinco);
-                    System.out.println(" moneda(s) de 5 céntimos");
+                    System.out.println(cinco + " moneda(s) de 5 céntimos");
                 }
             }
         }

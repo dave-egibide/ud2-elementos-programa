@@ -9,31 +9,20 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        int min = Integer.MAX_VALUE;
-        int max = Integer.MIN_VALUE;
-        int total = 0;
-        int y;
+        int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE, total = 0;
+        String x;
 
-        System.out.println("Introduzca un valor o escriba FIN para terminar:");
-        String x = br.readLine();
+        do {
+            System.out.println("Introduzca un valor o escriba FIN para terminar:");
+            x = br.readLine();
 
-        if ((!new String("FIN").equals(x))) {
-            do {
-                y = Integer.parseInt(x);
-                total = y + total;
-                if (y < min) min = y;
-                if (y > max) max = y;
-                System.out.println("Introduzca un valor o escriba FIN para terminar:");
-                x = br.readLine();
-            } while ((!new String("FIN").equals(x)));
+            if (!x.equals("FIN")) {
+                total += Integer.parseInt(x);
+                if (Integer.parseInt(x) < min) min = Integer.parseInt(x);
+                if (Integer.parseInt(x) > max) max = Integer.parseInt(x);
+            }
+        } while (!x.equals("FIN"));
 
-            System.out.print("La suma total es ");
-            System.out.print(total);
-            System.out.print(". El mínimo es ");
-            System.out.print(min);
-            System.out.print(". El máximo es ");
-            System.out.print(max);
-            System.out.println(".");
-        }
+        System.out.println("La suma total es " + total + ". El mínimo es " + min + ". El máximo es " + max + ".");
     }
 }

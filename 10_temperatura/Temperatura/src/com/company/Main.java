@@ -17,21 +17,15 @@ public class Main {
             System.out.println("Introduzca F para convertir a Fahrenheit o introduzca K para convertir a Kelvin:");
             String x = br.readLine();
 
-            if ((new String("F").equals(x))) {
+            if (x.equals("F")) {
                 double fahr = temp * 9 / 5 + 32;
-                System.out.print(temp);
-                System.out.print(" ºC son ");
-                System.out.print(fahr);
-                System.out.println(" ºF");
+                System.out.println(temp + "Cº son" + fahr + "ºF");
                 end = true;
 
             } else {
-                if ((new String("K").equals(x))) {
+                if (x.equals("K")) {
                     double kelvin = temp + 273.15;
-                    System.out.print(temp);
-                    System.out.print("ºC son ");
-                    System.out.print(kelvin);
-                    System.out.println("ºK");
+                    System.out.println(temp + "Cº son" + kelvin + "ºK");
                     end = true;
                 } else {
                     System.out.println("No valido.");

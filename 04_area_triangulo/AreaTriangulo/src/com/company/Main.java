@@ -14,9 +14,8 @@ public class Main {
         System.out.println("Introduzca el valor de la altura del triángulo:");
         int altura = Integer.parseInt(br.readLine());
 
-        int area = base * altura / 2;
+        double area = (double) (base * altura) / 2;
 
-        System.out.print("El área del triángulo es: ");
-        System.out.println(area);
+        System.out.println("El área del triángulo es: " + area);
     }
 }

@@ -14,24 +14,11 @@ public class Main {
         int x = Integer.parseInt(br.readLine());
 
         // en caso de ser un número negativo
-        if (x < 0) {
-            for (int countdown = 0; countdown > x; countdown--) {
-                cuadrado = x + cuadrado;
-            }
-            cuadrado = cuadrado * -1;
-            System.out.print("El cuadrado de ");
-            System.out.print(x);
-            System.out.print(" es ");
-            System.out.println(cuadrado);
+        if (x < 0) x *= -1;
 
-        } else {
-            for (int countdown = 0; countdown < x; countdown++) {
-                cuadrado = x + cuadrado;
-            }
-        }
-        System.out.print("El cuadrado de ");
-        System.out.print(x);
-        System.out.print(" es ");
-        System.out.println(cuadrado);
+        for (int countdown = 0; countdown < x; countdown++)
+            cuadrado += x;
+
+        System.out.println("El cuadrado de " + x + " es " + cuadrado);
     }
 }

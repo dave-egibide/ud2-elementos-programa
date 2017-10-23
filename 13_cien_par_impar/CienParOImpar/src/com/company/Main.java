@@ -9,41 +9,29 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         {
+            int y = 0;
             boolean end = false;
 
-
             do {
-                System.out.println("Escriba par o impar");
+                System.out.println("Escriba par o impar:");
                 String x = br.readLine();
 
-                if ((new String("par").equals(x))) {
-                    int par = 0;
+                if (x.equals("par")) {
+                    y = 2;
+                    System.out.print("Los 100 primeros números pares son:\n0");
+                } else if (x.equals("impar")) {
+                    y = 3;
+                    System.out.print("Los 100 primeros números impares son:\n1");
 
-                    System.out.println("Los 100 primeros números pares son:");
-                    for (int count = 0; count < 99; count++) {
-                        System.out.print(par);
-                        System.out.print(", ");
-                        par = par + 2;
+                } else System.out.println("Operación invalida");
+
+                if (y != 0) {
+                    for (int count = 0; count < 100; count++) {
+                        System.out.print(", " + y);
+                        y += 2;
                     }
-                    System.out.println("198.");
+                    System.out.println(".");
                     end = true;
-
-                    } else {
-                    if ((new String("impar").equals(x))) {
-                        int impar = 1;
-
-                        System.out.println("Los 100 primeros números impares son:");
-                        for (int count = 0; count < 99; count++) {
-                            System.out.print(impar);
-                            System.out.print(", ");
-                            impar = impar + 2;
-                        }
-                        System.out.println("199.");
-                        end = true;
-
-                    } else {
-                        System.out.println("Operación invalida");
-                    }
                 }
             } while (!end);
         }
